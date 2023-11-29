@@ -1,1 +1,16 @@
-<p>items works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div id="gallery" class="col-md-9">
+      <div class="gallery">
+        <div class="gallery-item fader" *ngFor="let item of (items$ | async)!"
+             (click)="selectItem(item)"
+             [class.active]="selectedItem===item">
+          <img class="profile-picture" src="assets/item-image.png">
+          <div class="overlay">
+            <div class="overlay-text">{{item.name}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
